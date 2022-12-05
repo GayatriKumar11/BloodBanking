@@ -1,24 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import Adddonor from './BloodBank/Adddonor';
+import Donor from './Donor/Donor';
+import Drive from './Drive/Drive'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import Table from 'react-bootstrap/Table';
+import "bootstrap";
+import 'bootstrap/dist/css/bootstrap.css';
+//import {BrowserRouter,Routes,Route} from 'react-router-dom'
+import { useEffect } from 'react';
+import Adddrive from './Drive/Adddrive';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+
+      <Routes>
+        <Route path="/" element={<Adddonor />}></Route>
+        <Route path="/donor" element={<Donor />}></Route>
+        <Route path="/drive" element={<Drive />}></Route>
+        <Route path="/adddrive" element={<Adddrive />}></Route>
+      </Routes>
+
+
+    </Router>
   );
 }
 
