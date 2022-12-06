@@ -1,0 +1,73 @@
+MVP:
+
+
++++++++++++++++++++++++++ SUPER ADMIN ++++++++++++++++++
+-get all USERS
+-get single USERS
+-get all hospitals
+-get single hospital
+-logout
+-delete all user profiles
+-delete all hospital profiles
+-update all user profiles
+-update all hospital profiles
+-delete all hospital posts
+-create a generic post
+
+         "/api/admin/users": "get all users",
+         "/api/admin/posts": "get all posts",
+         "/api/posts/by/:hospitalId": "get posts by hospital",
+         "/api/user/:userId": "get/update/delete user",    
+
+
++++++++++++++++++++++++++ USERS ++++++++++++++++++++++
+-signin OK
+-signup OK
+-logout OK
+-getprofile OK
+-edit profile OK
+-delete profile OK
+-update profile OK
+-read all hospital requests by Hospital OK
+---search by hospital name
+---search by map
+---send email
+---send hot notification
+
+       
+        "/api/user/signup": "signup",
+        "/api/user/signin": "signin",
+        "/api/usersignout": "signout",
+        "/api/user/:userId": "get/update/delete user profile",
+
+        "/api/posts": "get all posts",
+       
+
++++++++++++++++++++++++ HOSPITAL +++++++++++++++++++++
+-signin OK
+-signup OK
+-logout OK
+-edit profile OK
+-delete profile OK
+-update profile OK
+-read all hospital requests by Hospital OK
+-post a request OK
+-update a request OK
+-delete a request OK
+
+        "/api/hospital/signup": "signup",
+        "/api/hospital/signin": "signin",
+        "/api/hospital": "signout",
+        "/api/hospital/:hospitalId": "get/update/delete hospital profile",
+
+        "/api/posts/:hospitalId": "get all posts",
+        "/api/post/new/:hospitalId": "create new post",
+        "/api/post/:hospitalId": "update/delete post"
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+VERSION V2.0:
+-Implement to App - react Native
+-Use sql DB
+-Implement comments
+-Followers/Followes
