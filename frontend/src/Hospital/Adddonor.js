@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Card from 'react-bootstrap/Card';
-import image from '../BloodBank/Blue.png';
+import image from '../Hospital/Blue.png';
 import Donor from '../Donor/Donor'
 import Adddrive from "../Drive/Adddrive";
 import Drive from '../Drive/Drive'
@@ -175,9 +175,8 @@ function Adddonor() {
     else {
       setzipcodeError(" ")
     }
-    var zipregex=/(^\d{5}$)|(^\d{5}-\d{4}$)/
-    if(!zipregex.test(zipcode))
-    {
+    var zipregex = /(^\d{5}$)|(^\d{5}-\d{4}$)/
+    if (!zipregex.test(zipcode)) {
       console.log('error testing')
       setzipcodeError("Please enter valid zipcode in digits and correct characters in length");
       return true;
@@ -190,7 +189,7 @@ function Adddonor() {
 
 
   var Adding = (e) => {
- 
+
     try {
       if (!validate()) {
         e.preventDefault();
@@ -200,7 +199,7 @@ function Adddonor() {
         setzipcode("");
         console.log('adding inventory')
         addinventory();
-       
+
       }
     }
     catch (err) {
@@ -216,7 +215,7 @@ function Adddonor() {
     setaddress("");
     setbloodgroup("");
     setzipcode("");
-    
+
 
   };
 
@@ -244,6 +243,7 @@ function Adddonor() {
       result = res.json()
       if (res.status == 409) {
         console.log('409')
+        console.log(res)
         setMessageError('Inventory already exists');
         setzipcodeError(" ")
         return true;
@@ -253,6 +253,7 @@ function Adddonor() {
         setMessageError(" ");
         setzipcodeError(" ");
         console.log('!409')
+        console.log(res)
         setinventoryList([
           ...inventoryList,
           {
@@ -301,8 +302,8 @@ function Adddonor() {
         }
       );
     };
-   
-    
+
+
   }
 
 
@@ -331,7 +332,7 @@ function Adddonor() {
     backgroundImage: "url('https://www.physiciansweekly.com/wp-content/uploads/2018/04/a388e7f1-istock-894125638.jpg')",
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
-    width:'100%',
+    width: '100%',
     height: 'auto',
     marginright: '100px'
   };
@@ -341,10 +342,11 @@ function Adddonor() {
       <Navbar id="navbar" bg="dark">
         <Container>
           <Navbar.Brand class="nav1">
-            <Link to='/' class="nav1">Blood Bank</Link> {"   "}
+            <Link to='/' class="nav1">Hospital</Link> {"   "}
             <Link to="/donor" class="nav1">Donor info</Link>{"   "}
             <Link to="/drive" class="nav1">Drive info</Link>{"   "}
             <Link to="/adddrive" class="nav1">Drive Admin</Link>{"   "}
+            <Link to="/bloodbank" class="nav1">Blood Bank</Link>{"   "}
           </Navbar.Brand>
         </Container>
       </Navbar>
@@ -353,7 +355,7 @@ function Adddonor() {
         <Card className="bg-warning text-black" id="adddonor">
           <div className="App">
             <div className="information">
-              <h1>BloodBank Inventory</h1>
+              <h1>Hospital Inventory</h1>
               <br></br>
               <br></br>
               <label>Hospital Name:</label>

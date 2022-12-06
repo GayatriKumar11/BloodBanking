@@ -6,9 +6,9 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Card from 'react-bootstrap/Card';
-import image from '../BloodBank/Blue.png';
+import image from '../Hospital/Blue.png';
 import Donor from '../Donor/Donor'
-import Adddonor from "../BloodBank/Adddonor";
+import Adddonor from "../Hospital/Adddonor";
 import Drive from '../Drive/Drive'
 
 
@@ -175,9 +175,8 @@ function Adddrive() {
     else {
       setzipcodeError(" ")
     }
-    var zipregex=/(^\d{5}$)|(^\d{5}-\d{4}$)/
-    if(!zipregex.test(zipcode))
-    {
+    var zipregex = /(^\d{5}$)|(^\d{5}-\d{4}$)/
+    if (!zipregex.test(zipcode)) {
       console.log('error testing')
       setzipcodeError("Please enter valid zipcode in digits and correct characters in length");
       return true;
@@ -198,7 +197,7 @@ function Adddrive() {
         setzipcode("");
         console.log('adding inverntory')
         addEvent();
-       
+
       }
     }
     catch (err) {
@@ -289,7 +288,7 @@ function Adddrive() {
       );
 
     };
-   
+
   }
 
 
@@ -328,10 +327,11 @@ function Adddrive() {
       <Navbar id="navbar" bg="dark">
         <Container>
           <Navbar.Brand class="nav1">
-            <Link to='/' class="nav1">Blood Bank</Link> {"   "}
+            <Link to='/' class="nav1">Hospital</Link> {"   "}
             <Link to="/donor" class="nav1">Donor info</Link>{"   "}
             <Link to="/drive" class="nav1">Drive info</Link>{"   "}
             <Link to="/adddrive" class="nav1">Drive Admin</Link>{"   "}
+            <Link to="/bloodbank" class="nav1">Blood Bank</Link>{"   "}
           </Navbar.Brand>
         </Container>
       </Navbar>

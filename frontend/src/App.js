@@ -1,5 +1,5 @@
 import './App.css';
-import Adddonor from './BloodBank/Adddonor';
+import Adddonor from './Hospital/Adddonor';
 import Donor from './Donor/Donor';
 import Drive from './Drive/Drive'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -9,6 +9,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 //import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import { useEffect } from 'react';
 import Adddrive from './Drive/Adddrive';
+import Bloodbank from './Bloodbank/Bloodbank';
+
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
         <Route path="/donor" element={<Donor />}></Route>
         <Route path="/drive" element={<Drive />}></Route>
         <Route path="/adddrive" element={<Adddrive />}></Route>
+        <Route path="/bloodbank" element={<Bloodbank/>}></Route>
       </Routes>
 
 
