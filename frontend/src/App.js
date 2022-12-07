@@ -9,6 +9,7 @@ import SigninAdmin from './admin/SigninAdmin';
 import Nav from './core/Nav';
 import EditProfileHospital from './receiver/EditProfileHospital';
 import ForgotPassword from './auth/ForgotPassword';
+import ResetPassword from './auth/ResetPassword';
 import SendEmail from './receiver/SendEmail';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             exact path="/receiver/edit/:hospitalId"
             element={<EditProfileHospital />} />
           <Route exact path="/forgot-password" element={<ForgotPassword />} />
+          <Route exact path="/reset-password/:resetPasswordToken" element={<ResetPassword />} />
           <Route exact path="/send-email" element={<SendEmail />}/>
       </Routes>  
     </Router>
