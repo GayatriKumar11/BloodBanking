@@ -17,6 +17,10 @@ router.get('/user/getAll', donorcontroller.GetDonor)
 
 router.put('/user/edit', donorcontroller.EditDonor)
 
+router.put('/user/editphonenumber', donorcontroller.EditDonorbyphonenumber)
+
+router.put('/user/editpassword', donorcontroller.EditDonorbypassword)
+
 router.delete('/user/delete', donorcontroller.DeleteDonor)
 
 

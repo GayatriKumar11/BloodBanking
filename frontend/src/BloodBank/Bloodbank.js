@@ -32,319 +32,230 @@ function Bloodbank() {
     let [newquantityError, setnewquantityError] = useState("");
     let [quantityError, setquantityError] = useState("");
     let [MessageError, setMessageError] = useState("");
-   
+
     let validate = () => {
 
-    var zipregex = /(^\d{5}$)|(^\d{5}-\d{4}$)/
-    if (bloodgroup === "" && zipcode === "" && address === "" && bloodbankname === "" && quantity === "") {
+        var zipregex = /(^\d{5}$)|(^\d{5}-\d{4}$)/
+        if (bloodgroup === "" && zipcode === "" && address === "" && bloodbankname === "" && quantity === "") {
 
-        setbloodbanknameError("Bloodbank name can't be blank");
-        setzipcodeError("zipcode can't be blank");
-        setbloodgroupError("blood group can't be blank");
-        setaddressError("Address cannot be blank");
-        setquantityError("Quantity cannot be blank");
-        setMessageError(" ");
-        return true;
-    }
-    else {
-        setbloodbanknameError("");
-        setzipcodeError("");
-        setbloodgroupError("");
-        setaddressError("");
-        setquantityError("");
-
-    }
-
-    if (bloodbankname === "" && address === "" && zipcode === "" && bloodgroup === "") {
-        setbloodbanknameError("Bloodbank name can't be blank");
-        setzipcodeError("zipcode can't be blank");
-        setbloodgroupError("blood group can't be blank");
-        setaddressError("Address cannot be blank");
-        console.log("hello");
-        // if (!zipcode==="") {
-        //     setzipcodeError("Please enter valid zipcode in digits and correct characters in length");
-        //     setbloodbanknameError("Bloodbank name can't be blank");
-        //     setbloodgroupError("blood group can't be blank");
-        //     setaddressError("Address cannot be blank");
-        //     return true;
-        // }
-        
-        // {
-        //     setzipcodeError("correct length");
-        //     setbloodbanknameError("Bloodbank name can't be blank");
-        //     setbloodgroupError("blood group can't be blank");
-        //     setaddressError("Address cannot be blank");
-        //     return true;
-        // }
-
-    }
-    else {
-        setbloodbanknameError("");
-        setzipcodeError("");
-        setbloodgroupError("");
-        setaddressError("");
-
-        if (bloodbankname === "" && address === "" && zipcode === "" && quantity === "") {
             setbloodbanknameError("Bloodbank name can't be blank");
             setzipcodeError("zipcode can't be blank");
+            setbloodgroupError("blood group can't be blank");
             setaddressError("Address cannot be blank");
             setquantityError("Quantity cannot be blank");
+            setMessageError(" ");
             return true;
+        }
+        else {
+            setbloodbanknameError("");
+            setzipcodeError("");
+            setbloodgroupError("");
+            setaddressError("");
+            setquantityError("");
+
+        }
+
+        if (bloodbankname === "" && address === "" && zipcode === "" && bloodgroup === "") {
+            setbloodbanknameError("Bloodbank name can't be blank");
+            setzipcodeError("zipcode can't be blank");
+            setbloodgroupError("blood group can't be blank");
+            setaddressError("Address cannot be blank");
+            console.log("hello");
+            // if (!zipcode==="") {
+            //     setzipcodeError("Please enter valid zipcode in digits and correct characters in length");
+            //     setbloodbanknameError("Bloodbank name can't be blank");
+            //     setbloodgroupError("blood group can't be blank");
+            //     setaddressError("Address cannot be blank");
+            //     return true;
+            // }
+
+            // {
+            //     setzipcodeError("correct length");
+            //     setbloodbanknameError("Bloodbank name can't be blank");
+            //     setbloodgroupError("blood group can't be blank");
+            //     setaddressError("Address cannot be blank");
+            //     return true;
+            // }
 
         }
         else {
             setbloodbanknameError("");
             setzipcodeError("");
+            setbloodgroupError("");
             setaddressError("");
-            setquantityError("");
 
-            if (bloodbankname === "" && address === "" && bloodgroup === "" && quantity === "") {
-
+            if (bloodbankname === "" && address === "" && zipcode === "" && quantity === "") {
                 setbloodbanknameError("Bloodbank name can't be blank");
-                setbloodgroupError("blood group can't be blank");
+                setzipcodeError("zipcode can't be blank");
                 setaddressError("Address cannot be blank");
                 setquantityError("Quantity cannot be blank");
                 return true;
+
             }
             else {
                 setbloodbanknameError("");
-                setbloodgroupError("");
+                setzipcodeError("");
                 setaddressError("");
                 setquantityError("");
 
-                if (bloodbankname === "" && zipcode === "" && bloodgroup === "" && quantity === "") {
+                if (bloodbankname === "" && address === "" && bloodgroup === "" && quantity === "") {
 
                     setbloodbanknameError("Bloodbank name can't be blank");
-                    setzipcodeError("zipcode cannott be blank");
-                    setbloodgroupError("Address cannot be blank");
+                    setbloodgroupError("blood group can't be blank");
+                    setaddressError("Address cannot be blank");
                     setquantityError("Quantity cannot be blank");
                     return true;
                 }
                 else {
                     setbloodbanknameError("");
-                    setzipcodeError("");
                     setbloodgroupError("");
+                    setaddressError("");
                     setquantityError("");
 
-                    if (address === "" && zipcode === "" && bloodgroup === "" && quantity === "") {
+                    if (bloodbankname === "" && zipcode === "" && bloodgroup === "" && quantity === "") {
 
+                        setbloodbanknameError("Bloodbank name can't be blank");
+                        setzipcodeError("zipcode cannott be blank");
+                        setbloodgroupError("Address cannot be blank");
                         setquantityError("Quantity cannot be blank");
-                        setzipcodeError("zipcode can't be blank");
-                        setbloodgroupError("blood group can't be blank");
-                        setaddressError("Address can't be blank");
                         return true;
-                       
-
                     }
                     else {
+                        setbloodbanknameError("");
                         setzipcodeError("");
                         setbloodgroupError("");
-                        setaddressError("");
                         setquantityError("");
 
+                        if (address === "" && zipcode === "" && bloodgroup === "" && quantity === "") {
+
+                            setquantityError("Quantity cannot be blank");
+                            setzipcodeError("zipcode can't be blank");
+                            setbloodgroupError("blood group can't be blank");
+                            setaddressError("Address can't be blank");
+                            return true;
+
+
+                        }
+                        else {
+                            setzipcodeError("");
+                            setbloodgroupError("");
+                            setaddressError("");
+                            setquantityError("");
+
+                        }
+
                     }
-
                 }
+
             }
-
         }
-    }
 
-    if (bloodbankname === "" && address === "" && bloodgroup === "") { //1
-        setbloodbanknameError("bloodbankname can't be empty")
-        setaddressError("address can't be empty")
-        setbloodgroupError("bloodgroup can't be empty")
-        return true;
-
-    }
-    else {
-        setbloodbanknameError("")
-        setaddressError("")
-        setbloodgroupError("")
-        if (bloodbankname === "" && address === "" && zipcode === "") { //2
+        if (bloodbankname === "" && address === "" && bloodgroup === "") { //1
             setbloodbanknameError("bloodbankname can't be empty")
             setaddressError("address can't be empty")
-            setzipcodeError("zipcode can't be empty")
+            setbloodgroupError("bloodgroup can't be empty")
             return true;
+
         }
         else {
             setbloodbanknameError("")
             setaddressError("")
-            setzipcodeError("")
-            if (bloodbankname === "" && address == "" && quantity == "") { //3
-                setbloodbanknameError(" bloodbankname can't be empty")
+            setbloodgroupError("")
+            if (bloodbankname === "" && address === "" && zipcode === "") { //2
+                setbloodbanknameError("bloodbankname can't be empty")
                 setaddressError("address can't be empty")
-                setquantityError("quantity can't be empty")
+                setzipcodeError("zipcode can't be empty")
                 return true;
             }
             else {
-                setbloodbanknameError(" ")
+                setbloodbanknameError("")
                 setaddressError("")
-                setquantityError("")
-                if (address === "" && zipcode === "" && bloodgroup === "") { //4
-                    setbloodgroupError("bloodgroup can't be empty")
+                setzipcodeError("")
+                if (bloodbankname === "" && address == "" && quantity == "") { //3
+                    setbloodbanknameError(" bloodbankname can't be empty")
                     setaddressError("address can't be empty")
-                    setzipcodeError("zipcode can't be empty")
+                    setquantityError("quantity can't be empty")
                     return true;
                 }
                 else {
-                    setbloodgroupError("")
+                    setbloodbanknameError(" ")
                     setaddressError("")
-                    setzipcodeError("")
-                    if (address === "" && zipcode === "" && quantity === "") { //5
-                        setquantityError("quantity can't be empty")
+                    setquantityError("")
+                    if (address === "" && zipcode === "" && bloodgroup === "") { //4
+                        setbloodgroupError("bloodgroup can't be empty")
                         setaddressError("address can't be empty")
                         setzipcodeError("zipcode can't be empty")
                         return true;
                     }
                     else {
-                        setquantityError("")
+                        setbloodgroupError("")
                         setaddressError("")
                         setzipcodeError("")
-                        if (bloodbankname == " " && zipcode == "" && quantity == "") { //6
-                            setbloodbanknameError("bloodbank name can't be empty")
-                            setbloodgroupError("blood group can't be empty")
+                        if (address === "" && zipcode === "" && quantity === "") { //5
+                            setquantityError("quantity can't be empty")
+                            setaddressError("address can't be empty")
                             setzipcodeError("zipcode can't be empty")
                             return true;
                         }
                         else {
-                            setbloodbanknameError("")
-                            setbloodgroupError("")
+                            setquantityError("")
+                            setaddressError("")
                             setzipcodeError("")
-                            if (bloodbankname === "" && bloodgroup === "" && quantity == "") { //7
+                            if (bloodbankname == " " && zipcode == "" && quantity == "") { //6
                                 setbloodbanknameError("bloodbank name can't be empty")
-                                setbloodgroupError("bloodgroup can't be empty")
-                                setquantityError("quantity can't be empty")
+                                setbloodgroupError("blood group can't be empty")
+                                setzipcodeError("zipcode can't be empty")
                                 return true;
                             }
                             else {
                                 setbloodbanknameError("")
                                 setbloodgroupError("")
-                                setquantityError("")
-                                if (bloodbankname == "" && bloodgroup == "" && zipcode === "") { //8
+                                setzipcodeError("")
+                                if (bloodbankname === "" && bloodgroup === "" && quantity == "") { //7
                                     setbloodbanknameError("bloodbank name can't be empty")
-                                    setbloodgroupError("blood group can't be empty")
-                                    setzipcodeError("zipcode can't be empty")
+                                    setbloodgroupError("bloodgroup can't be empty")
+                                    setquantityError("quantity can't be empty")
                                     return true;
                                 }
                                 else {
-                                    setbloodgroupError("")
                                     setbloodbanknameError("")
-                                    setzipcodeError("")
-                                    if (zipcode === "" && bloodgroup === "" && quantity === "") { //9
+                                    setbloodgroupError("")
+                                    setquantityError("")
+                                    if (bloodbankname == "" && bloodgroup == "" && zipcode === "") { //8
+                                        setbloodbanknameError("bloodbank name can't be empty")
                                         setbloodgroupError("blood group can't be empty")
-                                        setquantityError("quantity can't be empty")
                                         setzipcodeError("zipcode can't be empty")
                                         return true;
                                     }
                                     else {
                                         setbloodgroupError("")
-                                        setquantityError("")
+                                        setbloodbanknameError("")
                                         setzipcodeError("")
-                                        if (address == "" && zipcode === " " && bloodgroup === "") { //10
-
+                                        if (zipcode === "" && bloodgroup === "" && quantity === "") { //9
                                             setbloodgroupError("blood group can't be empty")
-                                            setaddressError("address can't be empty")
+                                            setquantityError("quantity can't be empty")
                                             setzipcodeError("zipcode can't be empty")
                                             return true;
-
-                                        }
-                                        else {
-
-                                            setbloodgroupError("")
-                                            setaddressError("")
-                                            setzipcodeError("")
-
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    if (bloodbankname === "" && address === "") {
-        setbloodbanknameError("Hospital Name can't be empty")
-        setaddressError("Address can't be empty")
-        return true;
-    }
-    else {
-        setbloodbanknameError(" ")
-        setaddressError(" ")
-        if (bloodbankname === "" && zipcode === "") {
-            setbloodbanknameError("Hospital Name can't be empty")
-            setzipcodeError("zipcode can't be empty")
-            return true;
-        }
-        else {
-            setbloodbanknameError("")
-            setzipcodeError("")
-            if (bloodbankname === "" && bloodgroup === "") {
-                setbloodbanknameError("blood bank name can't be empty")
-                setbloodgroupError("bloodgroup can't be empty")
-                return true;
-            }
-            else {
-                setbloodbanknameError(" ")
-                setbloodgroupError(" ")
-                if (bloodbankname === "" && quantity === "") {
-                    setbloodbanknameError("blood bank name can't be empty")
-                    setquantity("quantity can't be empty")
-                    return true;
-                }
-                else {
-                    if (address === "" && zipcode === "") {
-                        setaddressError("address can't be empty")
-                        setzipcodeError("zipcode can't be empty")
-                        return true;
-                    }
-                    else {
-                        setaddressError("")
-                        setzipcodeError("")
-                        if (address === "" && bloodgroup === "") {
-                            setaddressError("address can't be empty")
-                            setbloodgroupError("bloodgroup can't be empty")
-                            return true;
-                        }
-                        else {
-                            setaddressError("")
-                            setbloodgroupError("")
-                            if (address == "" && quantity == "") {
-                                setaddressError("address can't be empty")
-                                setquantityError("quantity can't be empty")
-                                return true;
-                            }
-                            else {
-                                setaddressError("")
-                                setquantityError("")
-                                if (zipcode == "" && bloodgroup == "") {
-                                    setzipcodeError("zipcode can't be empty")
-                                    setbloodgroupError("bloodgroup can't be empty")
-                                    return true;
-                                }
-                                else {
-                                    setzipcodeError("")
-                                    setbloodgroupError("")
-                                    if (zipcode == "" && quantity == "") {
-                                        setzipcodeError("zipcode can't be empty")
-                                        setquantityError("quantity can't be empty")
-                                        return true;
-                                    }
-                                    else {
-                                        setzipcodeError("")
-                                        setquantityError("")
-                                        if (bloodgroup == "" && quantity == "") {
-                                            setbloodgroupError("bloodgroup can't be empty")
-                                            setquantityError("quantity can't be empty")
-                                            return true;
-                                           
                                         }
                                         else {
                                             setbloodgroupError("")
                                             setquantityError("")
+                                            setzipcodeError("")
+                                            if (address == "" && zipcode === " " && bloodgroup === "") { //10
+
+                                                setbloodgroupError("blood group can't be empty")
+                                                setaddressError("address can't be empty")
+                                                setzipcodeError("zipcode can't be empty")
+                                                return true;
+
+                                            }
+                                            else {
+
+                                                setbloodgroupError("")
+                                                setaddressError("")
+                                                setzipcodeError("")
+
+                                            }
                                         }
                                     }
                                 }
@@ -353,143 +264,232 @@ function Bloodbank() {
                     }
                 }
             }
-            if (address === "") {
-                setaddressError("Address cannot be blank");
-                return true;
-            }
-            else {
+        }
 
-                setaddressError(" ")
-            }
-            if (bloodbankname === "") {
-                setbloodbanknameError("bloodbank name cannot be blank");
+        if (bloodbankname === "" && address === "") {
+            setbloodbanknameError("Hospital Name can't be empty")
+            setaddressError("Address can't be empty")
+            return true;
+        }
+        else {
+            setbloodbanknameError(" ")
+            setaddressError(" ")
+            if (bloodbankname === "" && zipcode === "") {
+                setbloodbanknameError("Hospital Name can't be empty")
+                setzipcodeError("zipcode can't be empty")
                 return true;
             }
             else {
-                setbloodbanknameError(" ")
-            }
-            if (bloodgroup === "") {
-                setbloodgroupError("bloodgroup cannot be blank")
-                return true;
-            }
-            else {
-                setbloodgroupError("")
-            }
-            if (zipcode === "") {
-                setzipcodeError("zipcode cannot be blank");
-                return true;
-            }
-            else {
-                setzipcodeError(" ")
-            }
-            var zipregex = /(^\d{5}$)|(^\d{5}-\d{4}$)/
-            if (!zipregex.test(zipcode)) {
-                console.log('error testing')
-                setzipcodeError("Please enter valid zipcode in digits and correct characters in length");
-                return true;
-            }
-            setzipcodeError(" ")
-            if (quantity === "") {
-                setquantityError("quantity cannot be blank");
-                return true;
-
-            }
-            else {
-
-                setquantityError("");
-                var quantityregex=/^ [0-9]*$/;
-                if(!quantityregex.test(quantity))
-                {
-                    setquantityError("quantity must be in numbers");
+                setbloodbanknameError("")
+                setzipcodeError("")
+                if (bloodbankname === "" && bloodgroup === "") {
+                    setbloodbanknameError("blood bank name can't be empty")
+                    setbloodgroupError("bloodgroup can't be empty")
                     return true;
                 }
-                setquantityError("")
+                else {
+                    setbloodbanknameError(" ")
+                    setbloodgroupError(" ")
+                    if (bloodbankname === "" && quantity === "") {
+                        setbloodbanknameError("blood bank name can't be empty")
+                        setquantity("quantity can't be empty")
+                        return true;
+                    }
+                    else {
+                        if (address === "" && zipcode === "") {
+                            setaddressError("address can't be empty")
+                            setzipcodeError("zipcode can't be empty")
+                            return true;
+                        }
+                        else {
+                            setaddressError("")
+                            setzipcodeError("")
+                            if (address === "" && bloodgroup === "") {
+                                setaddressError("address can't be empty")
+                                setbloodgroupError("bloodgroup can't be empty")
+                                return true;
+                            }
+                            else {
+                                setaddressError("")
+                                setbloodgroupError("")
+                                if (address == "" && quantity == "") {
+                                    setaddressError("address can't be empty")
+                                    setquantityError("quantity can't be empty")
+                                    return true;
+                                }
+                                else {
+                                    setaddressError("")
+                                    setquantityError("")
+                                    if (zipcode == "" && bloodgroup == "") {
+                                        setzipcodeError("zipcode can't be empty")
+                                        setbloodgroupError("bloodgroup can't be empty")
+                                        return true;
+                                    }
+                                    else {
+                                        setzipcodeError("")
+                                        setbloodgroupError("")
+                                        if (zipcode == "" && quantity == "") {
+                                            setzipcodeError("zipcode can't be empty")
+                                            setquantityError("quantity can't be empty")
+                                            return true;
+                                        }
+                                        else {
+                                            setzipcodeError("")
+                                            setquantityError("")
+                                            if (bloodgroup == "" && quantity == "") {
+                                                setbloodgroupError("bloodgroup can't be empty")
+                                                setquantityError("quantity can't be empty")
+                                                return true;
+
+                                            }
+                                            else {
+                                                setbloodgroupError("")
+                                                setquantityError("")
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                if (address === "") {
+                    setaddressError("Address cannot be blank");
+                    return true;
+                }
+                else {
+
+                    setaddressError(" ")
+                }
+                if (bloodbankname === "") {
+                    setbloodbanknameError("bloodbank name cannot be blank");
+                    return true;
+                }
+                else {
+                    setbloodbanknameError(" ")
+                }
+                if (bloodgroup === "") {
+                    setbloodgroupError("bloodgroup cannot be blank")
+                    return true;
+                }
+                else {
+                    setbloodgroupError("")
+                }
+                if (zipcode === "") {
+                    setzipcodeError("zipcode cannot be blank");
+                    return true;
+                }
+                else {
+                    setzipcodeError(" ")
+                }
+                var zipregex = /(^\d{5}$)|(^\d{5}-\d{4}$)/
+                if (!zipregex.test(zipcode)) {
+                    console.log('error testing')
+                    setzipcodeError("Please enter valid zipcode in digits and correct characters in length");
+                    return true;
+                }
+                setzipcodeError(" ")
+                if (quantity === "") {
+                    setquantityError("quantity cannot be blank");
+                    return true;
+
+                }
+                else {
+
+                    setquantityError("");
+                    var quantityregex=/^ [0-9]*$/;
+                    if(!quantityregex.test(quantity))
+                    {
+                        setquantityError("quantity must be in numbers");
+                        return true;
+                    }
+                    setquantityError("")
+                }
+
+
+
+
             }
-                
-              
-            
-          
+
         }
-        
+
     }
-   
-}
 
 
-    
-  var Adding = (e) => {
 
-    try {
-      if (!validate()) {
-        e.preventDefault();
-        setbloodbankname("");
-        setaddress("");
-        setbloodgroup("");
-        setzipcode("");
-        setquantity("");
-        console.log('adding inventory')
-        addBloodbank();
-      }
-    }
-    catch (err) {
-      console.log(err);
-    }
-  };
+    var Adding = (e) => {
+
+        try {
+            if (!validate()) {
+                e.preventDefault();
+                setbloodbankname("");
+                setaddress("");
+                setbloodgroup("");
+                setzipcode("");
+                setquantity("");
+                console.log('adding inventory')
+                addBloodbank();
+            }
+        }
+        catch (err) {
+            console.log(err);
+        }
+    };
 
 
 
 
-  const addBloodbank = () => {
-    let item = {
-      bloodbankname: bloodbankname,
-      address: address,
-      zipcode: zipcode,
-      bloodgroup: bloodgroup,
-      quantity:quantity
-    }
-    console.log(item);
-    let result = fetch('http://localhost:8080/bloodbank/create', {
-      method: 'POST',
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify(item)
-
-
-      //history.push('/Jobs')
-
-    }).then(res => {
-      result = res.json()
-      if (res.status == 409) {
-        console.log('409')
-        setMessageError('Blood Bank already exists');
-        setzipcodeError(" ")
-        setquantityError("")
-    
-        return true;
-
-      }
-      if (res.status != 409) {
-        setMessageError(" ");
-        setzipcodeError(" ");
-        setquantityError("")
-        console.log('!409')
-        console.log(res)
-        setinventoryList([
-          ...inventoryList,
-          {
+    const addBloodbank = () => {
+        let item = {
             bloodbankname: bloodbankname,
             address: address,
             zipcode: zipcode,
             bloodgroup: bloodgroup,
-            quantity:quantity
+            quantity: quantity
+        }
+        console.log(item);
+        let result = fetch('http://localhost:8080/bloodbank/create', {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(item)
 
-          },
-        ])
-      }
-    })
-  }
+
+            //history.push('/Jobs')
+
+        }).then(res => {
+            result = res.json()
+            if (res.status == 409) {
+                console.log('409')
+                setMessageError('Blood Bank already exists');
+                setzipcodeError(" ")
+                setquantityError("")
+
+                return true;
+
+            }
+            if (res.status != 409) {
+                setMessageError(" ");
+                setzipcodeError(" ");
+                setquantityError("")
+                console.log('!409')
+                console.log(res)
+                setinventoryList([
+                    ...inventoryList,
+                    {
+                        bloodbankname: bloodbankname,
+                        address: address,
+                        zipcode: zipcode,
+                        bloodgroup: bloodgroup,
+                        quantity: quantity
+
+                    },
+                ])
+            }
+        })
+    }
 
 
     const getBloodbank = () => {
@@ -500,28 +500,21 @@ function Bloodbank() {
     };
 
     const updateBloodbank = (zipcode) => {
-        setnewbloodgroup("")
-        setnewquantity("")
-        if(newbloodgroup==" ")
-        {
-            setnewbloodgroupError("update cannot be done when blood type is empty");
-        }
-        else{
-            setnewbloodgroup("")
-        }
-        if(newquantity=="")
-        {
-            setquantityError("update cannot de done when quantity is empty");
-        }
-        else{
-            setquantityError("")
-        }
-        if (newbloodgroup === "" && newquantity === " ") {
+
+        if (newbloodgroup === "" && newquantity === "") {
+            console.log('hello new ')
             setnewbloodgroupError("update cannot be done when blood type is empty");
             setnewquantityError("update cannot be done when quantity is empty");
             return true;
-        }
-        else {
+        } else if(newbloodgroup === ""){
+            setnewbloodgroupError("update cannot be done when blood type is empty");
+            setnewquantityError("");
+        } else if (newquantity === "") {
+            setnewquantityError("update cannot de done when quantity is empty111");
+            setnewbloodgroup("");
+        } else {
+            setnewquantityError("");
+            setnewbloodgroup("");
             console.log("clearing updating");
             Axios.put('http://localhost:8080/bloodbank/edit', { bloodgroup: newbloodgroup, quantity: newquantity, zipcode: zipcode }).then(
                 (response) => {
@@ -530,7 +523,7 @@ function Bloodbank() {
                             return val.zipcode == zipcode
                                 ? {
                                     id: val.id,
-                                    hospitalname: val.hospitalname,
+                                    bloodbankname: val.bloodbankname,
                                     address: val.address,
                                     zipcode: val.zipcode,
                                     bloodgroup: newbloodgroup,
@@ -541,7 +534,48 @@ function Bloodbank() {
                     );
                 }
             );
-        };
+
+
+        }
+      
+            // setnewbloodgroupError("");
+            // setnewquantityError("");
+            // if (newbloodgroup == " ") {
+            //     setnewbloodgroupError("update cannot be done when blood type is empty");
+            //     return true;
+            // }
+            // else if() {
+            //     setnewbloodgroup("")
+            //     if (newquantity == "") {
+            //         setnewquantityError("update cannot de done when quantity is empty111");
+            //         return true;
+            //     }
+            //     else {
+            //         setnewquantityError("")
+            //         console.log("clearing updating");
+            //         Axios.put('http://localhost:8080/bloodbank/edit', { bloodgroup: newbloodgroup, quantity: newquantity, zipcode: zipcode }).then(
+            //             (response) => {
+            //                 setinventoryList(
+            //                     inventoryList.map((val) => {
+            //                         return val.zipcode == zipcode
+            //                             ? {
+            //                                 id: val.id,
+            //                                 bloodbankname: val.bloodbankname,
+            //                                 address: val.address,
+            //                                 zipcode: val.zipcode,
+            //                                 bloodgroup: newbloodgroup,
+            //                                 quantity: newquantity
+            //                             }
+            //                             : val;
+            //                     })
+            //                 );
+            //             }
+            //         );
+            //     }
+            // }
+
+
+        
 
 
     }
@@ -587,6 +621,9 @@ function Bloodbank() {
                         <Link to="/drive" class="nav1">Drive info</Link>{"   "}
                         <Link to="/adddrive" class="nav1">Drive Admin</Link>{"   "}
                         <Link to="/bloodbank" class="nav1">Blood Bank</Link>{"   "}
+                        <Link to="/donorpage" class="nav1">Donor UI</Link>{"   "}
+                        <Link to="/viewappointment" class="nav1">View Appointments</Link>{"   "}
+                        <Link to="/updateDonor" class="nav1">View Appointments</Link>{"   "}
                     </Navbar.Brand>
                 </Container>
             </Navbar>
@@ -606,7 +643,7 @@ function Bloodbank() {
                                 }}
                             />
                             <div style={{ fontSize: 15, color: "red" }}>{bloodbanknameError ? <p>{bloodbanknameError}</p> : null}</div>
-        
+
                             <label>bloodgroup:</label>
                             <input
                                 type="text" id="input" value={bloodgroup}
@@ -623,7 +660,7 @@ function Bloodbank() {
                                 }}
                             />
                             <div style={{ fontSize: 15, color: "red" }}>{quantityError ? <p>{quantityError}</p> : null}</div>
-                           
+
                             <label>Address:</label>
                             <input
                                 type="text" id="input" value={address}
@@ -639,7 +676,7 @@ function Bloodbank() {
                                     setzipcode(event.target.value);
                                 }}
                             />
-                           <br></br>
+                            <br></br>
                             <div style={{ fontSize: 15, color: "red" }}>{zipcodeError ? <p>{zipcodeError}</p> : null}</div>
                             <button id="button" onClick={Adding}>Add Inventory</button>
                         </div>
@@ -651,7 +688,7 @@ function Bloodbank() {
                                 return (
                                     <div className="inventories">
                                         <div>
-                                            <h3>BloodbankName: {val.hospitalname}</h3>
+                                            <h3>BloodbankName: {val.bloodbankname}</h3>
                                             <h3>Address: {val.address}</h3>
                                             <h3>zipcode: {val.zipcode}</h3>
                                             <h3>bloodgroup: {val.bloodgroup}</h3>

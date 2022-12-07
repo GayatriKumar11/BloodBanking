@@ -8,7 +8,12 @@ var bodyParser = require('body-parser');
 const cors = require('cors');
 
 //var config = require('./config');
-var userRoute = require('./routes/donor.routes')
+var donorRoute = require('./routes/donor.routes')
+var driveRoute = require('./routes/drive.routes')
+var bloodbankRoute = require('./routes/bloodbank.routes')
+var inventoryRoute = require('./routes/inventory.routes')
+var appointmentRoute = require('./routes/appointment.routes')
+
 
 var dbUrl="mongodb+srv://saranya:Abcd%4012345@cluster.mpjxo80.mongodb.net/BloodDonation"
 // connect to mongoDB 
@@ -27,7 +32,11 @@ app.use(cors());
 
 // add middleware 
 app.use(bodyParser.json());
-app.use(userRoute);
+app.use(donorRoute);
+app.use(driveRoute);
+app.use(bloodbankRoute);
+app.use(inventoryRoute);
+app.use(appointmentRoute);
 app.use(express.json());
 
 var server = http.createServer(app);

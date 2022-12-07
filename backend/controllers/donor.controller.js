@@ -56,7 +56,33 @@ const EditDonor= async (req, res) => {
 
 }
    
+const EditDonorbyphonenumber= async (req, res) => {
+    user = await User.findOne({ email: req.body.email });
 
+    if (user) {
+        donorservice.EditDonorServicePhonenumber(req,res)
+    }
+    else {
+        res.status(400).send("User not found in Database");
+
+    }
+
+
+}
+   
+const EditDonorbypassword= async (req, res) => {
+    user = await User.findOne({ email: req.body.email });
+
+    if (user) {
+        donorservice.EditDonorServicePassword(req,res)
+    }
+    else {
+        res.status(400).send("User not found in Database");
+
+    }
+
+
+}
 
 const DeleteDonor= async (req, res) => {
 
@@ -74,6 +100,7 @@ module.exports = {
     GetDonor,
     EditDonor,
     DeleteDonor,
-
+    EditDonorbyphonenumber,
+    EditDonorbypassword
 
 };

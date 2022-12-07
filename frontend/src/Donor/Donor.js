@@ -39,6 +39,9 @@ function Donor() {
             <Link to="/drive" class="nav1">Drive info</Link>{"   "}
             <Link to="/adddrive" class="nav1">Drive Admin</Link>{"   "}
             <Link to="/bloodbank" class="nav1">Blood Bank</Link>{"   "}
+            <Link to="/donorpage" class="nav1">Donor UI</Link>{"   "}
+            <Link to="/viewappointment" class="nav1">View Appointments</Link>{"   "}
+            <Link to="/updateDonor" class="nav1">View Appointments</Link>{"   "}
           </Navbar.Brand>
         </Container>
       </Navbar>

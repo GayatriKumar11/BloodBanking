@@ -59,6 +59,28 @@ const EditDonorService= async (req, res) => {
     }
 
    
+    const EditDonorServicePhonenumber= async (req, res) => {
+
+        const phonenumber = req.body.phonenumber;
+        const email = req.body.email;
+        const options = { new: true };
+        const result = await User.findOneAndUpdate({ email: email }, { phonenumber: phonenumber }, options);
+        res.send(result);
+        return;
+    }
+
+
+    const EditDonorServicePassword= async (req, res) => {
+
+        const password = req.body.password;
+        const email = req.body.email;
+        const salt = await bcrypt.genSalt(10);
+        const password1 = await bcrypt.hash(password, salt);
+        const options = { new: true };
+        const result = await User.findOneAndUpdate({ email: email }, { password: password1 }, options);
+        res.send(result);
+        return;
+    }
 
 const DeleteDonorService= async (req, res) => {
 
@@ -82,6 +104,7 @@ module.exports = {
     GetDonorService,
     EditDonorService,
     DeleteDonorService,
-
+    EditDonorServicePhonenumber,
+    EditDonorServicePassword
 
 };
