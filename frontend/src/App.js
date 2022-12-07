@@ -8,6 +8,8 @@ import SigninUser from './donor/SigninUser';
 import SigninAdmin from './admin/SigninAdmin';
 import Nav from './core/Nav';
 import EditProfileHospital from './receiver/EditProfileHospital';
+import ForgotPassword from './auth/ForgotPassword';
+import SendEmail from './receiver/SendEmail';
 
 function App() {
   return (
@@ -20,10 +22,11 @@ function App() {
           <Route exact path="/signup-user" element={<SignupUser />} />
           <Route exact path="/signin-user" element={<SigninUser />} />
           <Route exact path="/signin-admin" element={<SigninAdmin />} />
-           <Route
+          <Route
             exact path="/receiver/edit/:hospitalId"
             element={<EditProfileHospital />} />
-            {/* <Route exact path="/dashboard-hospital/:hospitalId/needblood" element={<NeedBlood />} /> */}
+          <Route exact path="/forgot-password" element={<ForgotPassword />} />
+          <Route exact path="/send-email" element={<SendEmail />}/>
       </Routes>  
     </Router>
   );
