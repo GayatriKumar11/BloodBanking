@@ -8,7 +8,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import Card from 'react-bootstrap/Card';
 import image from '../Hospital/Blue.png';
 import Donor from '../Donor/Donor'
-import Adddonor from "../Hospital/Adddonor";
+import Adddonor from "../Hospital/Addhospital";
 import Drive from '../Drive/Drive'
 
 

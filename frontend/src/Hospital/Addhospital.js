@@ -12,7 +12,7 @@ import Adddrive from "../Drive/Adddrive";
 import Drive from '../Drive/Drive'
 
 
-function Adddonor() {
+function Addhospitals() {
 
   const [hospitalname, sethospitalname] = useState("");
   const [address, setaddress] = useState("");
@@ -349,6 +349,7 @@ function Adddonor() {
             <Link to="/bloodbank" class="nav1">BloodBank Inventory</Link>{"   "}
             <Link to="/donorpage" class="nav1">Donor UI</Link>{"   "}
             <Link to="/viewappointment" class="nav1">View Appointments</Link>{"   "}
+            <Link to="/plusdonor" class="nav1">View Appointments</Link>{"   "}
 
           </Navbar.Brand>
         </Container>
@@ -455,4 +456,4 @@ function Adddonor() {
 }
 
 
-export default Adddonor
+export default Addhospitals

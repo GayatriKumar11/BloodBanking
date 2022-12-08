@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import Table from 'react-bootstrap/Table';
-import Adddonor from '../Hospital/Adddonor';
+import Adddonor from '../Hospital/Addhospital';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
