@@ -68,6 +68,8 @@
     height: 200px;
     width: 280px;
     margin-left: 160px;
+   
+    
   }
   .bullets:first-child {
     margin-top: 160px;
@@ -76,13 +78,21 @@
     margin-left: 16px;
     padding-top: 20px;
   }
-  .bullets p {
-    font-size: 14px;
-    margin-left: 12px;
-    margin-top: 20px;
-    float: left;
+
+  ul.a {
+    margin-top:0px;
+    list-style-type: square;
+    color:white;
   }
-  
+  ul.b {
+    list-style-type: square;
+    color:red;
+  }
+  #cardhomepage{
+    margin-top:20px;
+    height:75%;
+    border-radius:10px;
+  }
   .bullets i {
     color: #c50f0f;
     margin-right: 5px;
@@ -377,4 +387,10 @@
     .title {
       font-size: 16px;
     }
+  }
+  h2{
+    margin-left:25px;
+  }
+  .center{
+    color:white;
   }

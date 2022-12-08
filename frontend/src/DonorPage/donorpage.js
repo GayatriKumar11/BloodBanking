@@ -2,13 +2,14 @@ import React from "react";
 import { NavLink } from 'react-router-dom';
 import curved from "../DonorPage/curved.png";
 import vector from "../DonorPage/vector.png";
-import blood from "../DonorPage/blood.png"
+import blood from "../DonorPage/blood.png";
+import blooddonation from "../DonorPage/blooddonation.jpg";
+import Card from 'react-bootstrap/Card';
 import './style.css';
 
 export default function Landing() {
     return (
         <>
-
             <div>
                 <nav className="navbar navbar-default navbar-static-top navbar-shrink bg-transparent">
                     <div className="container">
@@ -26,7 +27,7 @@ export default function Landing() {
                             className="collapse navbar-collapse"
                             id="bs-example-navbar-collapse-1"
                         >
-                            
+
                             <ul className="nav navbar-nav navbar-right">
                                 <li className="hidden active">
                                     <NavLink to="#page-top">{""}</NavLink>
@@ -40,7 +41,7 @@ export default function Landing() {
                                             borderBottom: "2px solid #c50f0f",
                                         }}
                                     >
-                                      
+
                                     </NavLink>
                                 </li>
                             </ul>
@@ -53,57 +54,73 @@ export default function Landing() {
                 <img className="curved" src={curved} alt="curved" />
 
                 <div className="center">
-                    <h2>What is Blood?</h2>
-                    <h3>Blood is made up of four main components. Red blood cells, platelets, plasma and white blood cells. Each whole blood donation has the potential to save up to three lives. </h3>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <br></br>
+                    <img src={blooddonation} id="blooddonation" />
+                    <h3>Why should you donate blood ?</h3>
                 </div>
             </div>
             <div className="features">
                 <h2></h2>
                 <div className="feature-body">
                     <div className="image">
-                        <img src={vector}  alt="vector" />
+                        <img src={vector} alt="vector" />
                     </div>
-                    <div className="points">
-                        <div className="bullets">
-                            <p>
-                                <i className="fa fa-location-arrow" aria-hidden="true"></i>
-                                Blood is made up of four main components.
-                                Red blood cells, platelets, plasma and white blood cells. 
-                            </p>
-                        </div>
-                        <div className="bullets">
-                        <p>
-                            The reason to donate is simple…it helps save lives. In fact, every two seconds of every day, someone needs blood. Since blood cannot be manufactured outside the body and has a limited shelf life, the supply must constantly be replenished by generous blood donors.
-                            </p>
-                        </div>
-                    </div>
+                    <Card className="bg-danger" id="cardhomepage">
+                            <ul class="a">
+                                <br></br>
+
+                                <li>Reduce stress</li>
+                                <br></br>
+                                <li>Improve your emotional well-being</li>
+                                <br></br>
+                                <li>Benefit your physical health</li>
+                                <br></br>
+                                <li>Help get rid of negative feelings</li>
+                                <br></br>
+                                <li>Giving blood reveal potential health problems</li>
+                                <br></br>
+                                <li>Giving blood may lower risk of suffering a heart attack</li>
+                                <br></br>
+                                <li>Giving blood can help liver stay healthy</li>
+                                <br></br>
+                                <li>Giving blood can help your mental state</li>
+                                <br></br>
+                                <li>Giving blood may reduce your risk of developing cancer</li>
+                            </ul>
+                    </Card>
                 </div>
             </div>
             <div className="tips" id="tips">
-                <h2> </h2>
-                <p>
-                   
-                </p>
+                <h2>On the Day of Donation</h2>
                 <div className="container">
                     <div className="tips-info">
                         <h4></h4>
                         <hr className="horizontal" />
-                        <ul>
-                            
+                        <br></br>
+                        <br></br>
+   
+                        <ul class="b">
+                        Drink plenty of fluids and eat at your regular mealtimes.
                         </ul>
                     </div>
                     <div className="tips-info">
                         <h4></h4>
                         <hr className="horizontal" />
-                        <ul>
-                          
+                        <br></br>
+                        <br></br>
+                        <ul class="b">
+                        Be prepared to present an official form of identification with a signature, proof of age, and a photo at the time of your donation.
                         </ul>
                     </div>
                     <div className="tips-info">
-                        <h4></h4>
-                        <hr className="horizontal" />
-                        <ul>
-                            
+                        <br></br>
+                        <br></br>
+                        <br></br>
+                        <ul class="b">
+                        Make sure that you are registered and have a scheduled appointment with the respective Blood Center.
                         </ul>
                     </div>
                 </div>
@@ -117,16 +134,16 @@ export default function Landing() {
                             <div class="col-sm-12 col-md-6">
                                 <h6></h6>
                                 <p class="text-justify">
-                                    
+
                                 </p>
                             </div>
 
                             <div class="col-xs-6 col-md-3">
-                                
+
                             </div>
 
                             <div class="col-xs-6 col-md-3">
-                                
+
                             </div>
                         </div>
                         <hr />
@@ -135,7 +152,7 @@ export default function Landing() {
                         <div class="row">
                             <div class="col-md-8 col-sm-6 col-xs-12">
                                 <p class="copyright-text">
-                                    Copyright &copy; {new Date().getFullYear()} 
+                                    Copyright &copy; {new Date().getFullYear()}
                                 </p>
                             </div>
                         </div>
