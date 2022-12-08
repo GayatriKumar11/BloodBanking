@@ -279,7 +279,7 @@ function Adddonor() {
   const updateinventory = (zipcode) => {
     setnewbloodgroup("")
     if (newbloodgroup === "") {
-      setnewbloodgroupError("update cannot be done");
+      alert("Please enter blood group");
       return true;
     }
     else {
@@ -330,10 +330,10 @@ function Adddonor() {
 
   const myStyle = {
     backgroundImage: "url('https://www.physiciansweekly.com/wp-content/uploads/2018/04/a388e7f1-istock-894125638.jpg')",
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100%',
+    backgroundRepeat: 'repeat',
     width: '100%',
-    height: 'auto',
+    height: '100%',
     marginright: '100px'
   };
   return (
@@ -342,72 +342,72 @@ function Adddonor() {
       <Navbar id="navbar" bg="dark">
         <Container>
           <Navbar.Brand class="nav1">
-            <Link to='/' class="nav1">Hospital</Link> {"   "}
-            <Link to="/donor" class="nav1">Donor info</Link>{"   "}
-            <Link to="/drive" class="nav1">Drive info</Link>{"   "}
-            <Link to="/adddrive" class="nav1">Drive Admin</Link>{"   "}
-            <Link to="/bloodbank" class="nav1">Blood Bank</Link>{"   "}
+            <Link to='/' class="nav1">Hospital Inventory</Link> {"   "}
+            <Link to="/donor" class="nav1">Donor information</Link>{"   "}
+            <Link to="/drive" class="nav1">Drive information</Link>{"   "}
+            <Link to="/adddrive" class="nav1">Drive Inventory</Link>{"   "}
+            <Link to="/bloodbank" class="nav1">BloodBank Inventory</Link>{"   "}
             <Link to="/donorpage" class="nav1">Donor UI</Link>{"   "}
             <Link to="/viewappointment" class="nav1">View Appointments</Link>{"   "}
-            <Link to="/updateDonor" class="nav1">View Appointments</Link>{"   "}
+
           </Navbar.Brand>
         </Container>
       </Navbar>
 
       <div style={myStyle}>
-        <Card className="bg-warning text-black" id="adddonor">
+        <Card className="bg-danger" id="adddonor">
           <div className="App">
             <div className="information">
               <h1>Hospital Inventory</h1>
               <br></br>
               <br></br>
-              <label>Hospital Name:</label>
+              <label id="label">Hospital Name:</label>
               <input id="input"
                 type="text" value={hospitalname}
                 onChange={(event) => {
                   sethospitalname(event.target.value);
                 }}
               />
-              <div style={{ fontSize: 15, color: "red" }}>{hospitalnameError ? <p>{hospitalnameError}</p> : null}</div>
-              <label>Address:</label>
+              <div style={{ fontSize: 17, color: "white" }}>{hospitalnameError ? <p>{hospitalnameError}</p> : null}</div>
+              <label id="label">Address:</label>
               <input
                 type="text" id="input" value={address}
                 onChange={(event) => {
                   setaddress(event.target.value);
                 }}
               />
-              <div style={{ fontSize: 15, color: "red" }}>{addressError ? <p>{addressError}</p> : null}</div>
-              <label>zipcode:</label>
+              <div style={{ fontSize: 17, color: "white" }}>{addressError ? <p>{addressError}</p> : null}</div>
+              <label id="label">Zipcode:</label>
               <input
                 type="text" id="input" value={zipcode}
                 onChange={(event) => {
                   setzipcode(event.target.value);
                 }}
               />
-              <div style={{ fontSize: 15, color: "red" }}>{zipcodeError ? <p>{zipcodeError}</p> : null}</div>
-              <label>bloodgroup:</label>
+              <div style={{ fontSize: 17, color: "white" }}>{zipcodeError ? <p>{zipcodeError}</p> : null}</div>
+              <label id="label">Bloodgroup:</label>
               <input
                 type="text" id="input" value={bloodgroup}
                 onChange={(event) => {
                   setbloodgroup(event.target.value);
                 }}
               />
-              <div style={{ fontSize: 15, color: "red" }}>{bloodgroupError ? <p>{bloodgroupError}</p> : null}</div>
+              <div style={{ fontSize: 17, color: "white" }}>{bloodgroupError ? <p>{bloodgroupError}</p> : null}</div>
               <br></br>
               <button id="button" onClick={Adding}>Add Inventory</button>
             </div>
-            <div style={{ fontSize: 15, color: "red" }}>{MessageError ? <p>{MessageError}</p> : null}</div>
+            <div style={{ fontSize: 17, color: "white" }}>{MessageError ? <p>{MessageError}</p> : null}</div>
             <div className="inventories">
               <button id="button" onClick={getinventories}>List of inventory</button>
 
               {inventoryList.map((val, key) => {
                 return (
                   <div className="inventories">
-                    <div>
+                    <div id="label">
                       <h3>HospitalName: {val.hospitalname}</h3>
                       <h3>Address: {val.address}</h3>
-                      <h3>zipcode: {val.zipcode}</h3>
-                      <h3>bloodgroup: {val.bloodgroup}</h3>
+                      <h3>Zipcode: {val.zipcode}</h3>
+                      <h3>Bloodgroup: {val.bloodgroup}</h3>
                     </div>
                     <div>
                       <input
@@ -419,7 +419,7 @@ function Adddonor() {
                         }}
                       />
                       <br></br>
-                      <div style={{ fontSize: 15, color: "red" }}>{newbloodgroupError ? <p>{newbloodgroupError}</p> : null}</div>
+                      <div style={{ fontSize: 17, color: "white" }}>{newbloodgroupError ? <p>{newbloodgroupError}</p> : null}</div>
                       <button id="updatebutton"
                         onClick={() => {
                           updateinventory(val.zipcode);

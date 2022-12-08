@@ -397,9 +397,8 @@ function Bloodbank() {
                 else {
 
                     setquantityError("");
-                    var quantityregex=/^ [0-9]*$/;
-                    if(!quantityregex.test(quantity))
-                    {
+                    var quantityregex = /^ [0-9]*$/;
+                    if (!quantityregex.test(quantity)) {
                         setquantityError("quantity must be in numbers");
                         return true;
                     }
@@ -503,19 +502,19 @@ function Bloodbank() {
 
         if (newbloodgroup === "" && newquantity === "") {
             console.log('hello new ')
-            setnewbloodgroupError("update cannot be done when blood type is empty");
-            setnewquantityError("update cannot be done when quantity is empty");
+            alert("Please enter blood group");
+            alert("Please enter quantity");
             return true;
-        } else if(newbloodgroup === ""){
-            setnewbloodgroupError("update cannot be done when blood type is empty");
-            setnewquantityError("");
+        } else if (newbloodgroup === "") {
+            alert("Please enter blood group");
+
         } else if (newquantity === "") {
-            setnewquantityError("update cannot de done when quantity is empty111");
-            setnewbloodgroup("");
+            alert("Please enter quantity");
+
         } else {
-            setnewquantityError("");
-            setnewbloodgroup("");
             console.log("clearing updating");
+            setnewquantity("")
+            setnewbloodgroup("")
             Axios.put('http://localhost:8080/bloodbank/edit', { bloodgroup: newbloodgroup, quantity: newquantity, zipcode: zipcode }).then(
                 (response) => {
                     setinventoryList(
@@ -537,45 +536,45 @@ function Bloodbank() {
 
 
         }
-      
-            // setnewbloodgroupError("");
-            // setnewquantityError("");
-            // if (newbloodgroup == " ") {
-            //     setnewbloodgroupError("update cannot be done when blood type is empty");
-            //     return true;
-            // }
-            // else if() {
-            //     setnewbloodgroup("")
-            //     if (newquantity == "") {
-            //         setnewquantityError("update cannot de done when quantity is empty111");
-            //         return true;
-            //     }
-            //     else {
-            //         setnewquantityError("")
-            //         console.log("clearing updating");
-            //         Axios.put('http://localhost:8080/bloodbank/edit', { bloodgroup: newbloodgroup, quantity: newquantity, zipcode: zipcode }).then(
-            //             (response) => {
-            //                 setinventoryList(
-            //                     inventoryList.map((val) => {
-            //                         return val.zipcode == zipcode
-            //                             ? {
-            //                                 id: val.id,
-            //                                 bloodbankname: val.bloodbankname,
-            //                                 address: val.address,
-            //                                 zipcode: val.zipcode,
-            //                                 bloodgroup: newbloodgroup,
-            //                                 quantity: newquantity
-            //                             }
-            //                             : val;
-            //                     })
-            //                 );
-            //             }
-            //         );
-            //     }
-            // }
+
+        // setnewbloodgroupError("");
+        // setnewquantityError("");
+        // if (newbloodgroup == " ") {
+        //     setnewbloodgroupError("update cannot be done when blood type is empty");
+        //     return true;
+        // }
+        // else if() {
+        //     setnewbloodgroup("")
+        //     if (newquantity == "") {
+        //         setnewquantityError("update cannot de done when quantity is empty111");
+        //         return true;
+        //     }
+        //     else {
+        //         setnewquantityError("")
+        //         console.log("clearing updating");
+        //         Axios.put('http://localhost:8080/bloodbank/edit', { bloodgroup: newbloodgroup, quantity: newquantity, zipcode: zipcode }).then(
+        //             (response) => {
+        //                 setinventoryList(
+        //                     inventoryList.map((val) => {
+        //                         return val.zipcode == zipcode
+        //                             ? {
+        //                                 id: val.id,
+        //                                 bloodbankname: val.bloodbankname,
+        //                                 address: val.address,
+        //                                 zipcode: val.zipcode,
+        //                                 bloodgroup: newbloodgroup,
+        //                                 quantity: newquantity
+        //                             }
+        //                             : val;
+        //                     })
+        //                 );
+        //             }
+        //         );
+        //     }
+        // }
 
 
-        
+
 
 
     }
@@ -603,11 +602,11 @@ function Bloodbank() {
     };
 
     const myStyle = {
-        backgroundImage: "url('')",
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
+        backgroundImage: "url('https://partheniumprojects.com/wp-content/uploads/2018/12/Blood-Bank-1.jpg')",
+        backgroundSize: '100%',
+        backgroundRepeat: 'repeat',
         width: '100%',
-        height: 'auto',
+        height: '100%',
         marginright: '100px'
     };
     return (
@@ -616,60 +615,60 @@ function Bloodbank() {
             <Navbar id="navbar" bg="dark">
                 <Container>
                     <Navbar.Brand class="nav1">
-                        <Link to='/' class="nav1">Hospital</Link> {"   "}
-                        <Link to="/donor" class="nav1">Donor info</Link>{"   "}
-                        <Link to="/drive" class="nav1">Drive info</Link>{"   "}
-                        <Link to="/adddrive" class="nav1">Drive Admin</Link>{"   "}
-                        <Link to="/bloodbank" class="nav1">Blood Bank</Link>{"   "}
+                        <Link to='/' class="nav1">Hospital Inventory</Link> {"   "}
+                        <Link to="/donor" class="nav1">Donor information</Link>{"   "}
+                        <Link to="/drive" class="nav1">Drive information</Link>{"   "}
+                        <Link to="/adddrive" class="nav1">Drive Inventory</Link>{"   "}
+                        <Link to="/bloodbank" class="nav1">BloodBank Inventory</Link>{"   "}
                         <Link to="/donorpage" class="nav1">Donor UI</Link>{"   "}
                         <Link to="/viewappointment" class="nav1">View Appointments</Link>{"   "}
-                        <Link to="/updateDonor" class="nav1">View Appointments</Link>{"   "}
+
                     </Navbar.Brand>
                 </Container>
             </Navbar>
 
             <div style={myStyle}>
-                <Card className="bg-warning text-black" id="adddonor">
+                <Card className="bg-danger" id="adddonor">
                     <div className="App">
                         <div className="information">
                             <h1>BloodBank Inventory</h1>
                             <br></br>
                             <br></br>
-                            <label>Bloodbank Name:</label>
+                            <label id="label">Bloodbank Name:</label>
                             <input id="input"
                                 type="text" value={bloodbankname}
                                 onChange={(event) => {
                                     setbloodbankname(event.target.value);
                                 }}
                             />
-                            <div style={{ fontSize: 15, color: "red" }}>{bloodbanknameError ? <p>{bloodbanknameError}</p> : null}</div>
+                            <div style={{ fontSize: 17, color: "white" }}>{bloodbanknameError ? <p>{bloodbanknameError}</p> : null}</div>
 
-                            <label>bloodgroup:</label>
+                            <label id="label">Bloodgroup:</label>
                             <input
                                 type="text" id="input" value={bloodgroup}
                                 onChange={(event) => {
                                     setbloodgroup(event.target.value);
                                 }}
                             />
-                            <div style={{ fontSize: 15, color: "red" }}>{bloodgroupError ? <p>{bloodgroupError}</p> : null}</div>
-                            <label>Quantity:</label>
+                            <div style={{ fontSize: 17, color: "white" }}>{bloodgroupError ? <p>{bloodgroupError}</p> : null}</div>
+                            <label id="label">Quantity:</label>
                             <input
                                 type="text" id="input" value={quantity}
                                 onChange={(event) => {
                                     setquantity(event.target.value);
                                 }}
                             />
-                            <div style={{ fontSize: 15, color: "red" }}>{quantityError ? <p>{quantityError}</p> : null}</div>
+                            <div style={{ fontSize: 17, color: "white" }}>{quantityError ? <p>{quantityError}</p> : null}</div>
 
-                            <label>Address:</label>
+                            <label id="label">Address:</label>
                             <input
                                 type="text" id="input" value={address}
                                 onChange={(event) => {
                                     setaddress(event.target.value);
                                 }}
                             />
-                            <div style={{ fontSize: 15, color: "red" }}>{addressError ? <p>{addressError}</p> : null}</div>
-                            <label>zipcode:</label>
+                            <div style={{ fontSize: 17, color: "white" }}>{addressError ? <p>{addressError}</p> : null}</div>
+                            <label id="label">Zipcode:</label>
                             <input
                                 type="text" id="input" value={zipcode}
                                 onChange={(event) => {
@@ -677,22 +676,22 @@ function Bloodbank() {
                                 }}
                             />
                             <br></br>
-                            <div style={{ fontSize: 15, color: "red" }}>{zipcodeError ? <p>{zipcodeError}</p> : null}</div>
+                            <div style={{ fontSize: 17, color: "white" }}>{zipcodeError ? <p>{zipcodeError}</p> : null}</div>
                             <button id="button" onClick={Adding}>Add Inventory</button>
                         </div>
-                        <div style={{ fontSize: 15, color: "red" }}>{MessageError ? <p>{MessageError}</p> : null}</div>
+                        <div style={{ fontSize: 17, color: "white" }}>{MessageError ? <p>{MessageError}</p> : null}</div>
                         <div className="inventories">
                             <button id="button" onClick={getBloodbank}>List of Bloodbanks</button>
 
                             {inventoryList.map((val, key) => {
                                 return (
                                     <div className="inventories">
-                                        <div>
+                                        <div id="label">
                                             <h3>BloodbankName: {val.bloodbankname}</h3>
                                             <h3>Address: {val.address}</h3>
-                                            <h3>zipcode: {val.zipcode}</h3>
-                                            <h3>bloodgroup: {val.bloodgroup}</h3>
-                                            <h3>quantity: {val.quantity}</h3>
+                                            <h3>Zipcode: {val.zipcode}</h3>
+                                            <h3>Bloodgroup: {val.bloodgroup}</h3>
+                                            <h3>Quantity: {val.quantity}</h3>
                                         </div>
                                         <div>
                                             <input
@@ -705,7 +704,7 @@ function Bloodbank() {
                                             />
                                             <br></br>
                                             <br></br>
-                                            <div style={{ fontSize: 15, color: "red" }}>{newbloodgroupError ? <p>{newbloodgroupError}</p> : null}</div>
+                                            <div style={{ fontSize: 17, color: "white" }}>{newbloodgroupError ? <p>{newbloodgroupError}</p> : null}</div>
                                             <input
                                                 type="text" id="input"
                                                 placeholder="update quantity"
@@ -716,7 +715,7 @@ function Bloodbank() {
                                             />
                                             <br></br>
                                             <br></br>
-                                            <div style={{ fontSize: 15, color: "red" }}>{newquantityError ? <p>{newquantityError}</p> : null}</div>
+                                            <div style={{ fontSize: 17, color: "white" }}>{newquantityError ? <p>{newquantityError}</p> : null}</div>
 
 
                                             <button id="updatebutton"

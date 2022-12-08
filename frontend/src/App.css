@@ -46,9 +46,7 @@ h1 {
   justify-content: center;
   flex-wrap: wrap;
   gap: 2em;
- 
- 
-  
+
 }
 .card {
   text-align: left;
@@ -56,6 +54,7 @@ h1 {
   border-radius: 5px;
   padding: 1em;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+ 
 
 }
 img {
@@ -74,10 +73,13 @@ img {
 #button{
   height:50px;
   width: 300px;
+  background-color: black;
+  color:white
 }
 #adddonor{
   margin-top:10px;
-  width:60%
+  width:60%;
+  color:white;
  
 }
 
@@ -85,15 +87,21 @@ img {
   margin-left:300px;
 }
 
+#appointment{
+  margin-left:450px;
+  color:red !important;
+}
 
 #adddrive{
   margin-top:10px;
-  margin-left:400px;
+  margin-left:640px;
   width:50%;
+  color:white
 }
 
 #requestheader{
   padding-left:190px;
+
 }
 
 #bookheader{
@@ -104,9 +112,11 @@ img {
   padding-left:50px;
 }
 
-/* #requestbutton{
-  margin-left:0px;
-} */
+#requestbutton{
+ margin-left:70px;
+  background-color:black;
+  color:white;
+}
 
 
 .App {
@@ -115,7 +125,14 @@ img {
   justify-content: center;
   width:100%;
   height:100%;
+ 
   
+}
+
+#label{
+  color:white;
+  font-size:medium;
+  font-weight:bold;
 }
 .App1 {
   display: flex;
@@ -219,22 +236,33 @@ input {
   font-size:medium;
   font-size:17px;
   text-decoration: None;
-  margin-left:30px;
-  margin-right:120px;
+  margin-left:10px;
+  margin-right:19px;
   height:100%;
   float:left;
+}
+
+#donorheading{
+  color:red;
+}
+
+#driveheading{
+  color:red;
 }
 
 #updatebutton{
 margin:10px;
 height:50px;
-  width: 300px;
-
+width: 300px;
+background-color:black;
+color:white;
 }
 #deletebutton{
 margin:10px;
 height:50px;
   width: 300px;
+  background-color:black;
+color:white;
 }
 
 #donor{
@@ -259,6 +287,7 @@ h2{
   }
   #adddonor{
     width:100%;
+    
   }
   #donor{
     width:100%;
@@ -295,12 +324,18 @@ h2{
   #inputdate{
     width:250px;
   }
+
+
+  #appointment{
+    margin-left:100px;
+  }
 } 
+
 
   @media screen and (max-width:768px) and (min-width:367px)
 {
   .nav1{
-    margin-left:125px;
+    margin-left:150px;
     }
     #adddonor{
       width:100%;
@@ -308,13 +343,18 @@ h2{
     #donor{
       width:100%;
       margin-left:0px;
+      
+      
     }
+    
     h2{
-      margin-left:100px;
+      margin-left:250px;
     }
     #tabledonor{
     width:100%;
+   
     }
+    
     #tabledrive{
       width:100%;
     }
@@ -341,6 +381,8 @@ h2{
       width:250px;
     }
 
-
+    #appointment{
+      margin-left:250px;
+    }
     
 }

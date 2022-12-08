@@ -263,29 +263,32 @@ function Adddrive() {
   const updateDrive = (zipcode) => {
 
     if (newdate === "") {
-      setnewdateError("update cannot be done");
+      alert('Please enter date');
       return true;
     }
     else {
       console.log("clearing updating");
       setnewdateError("")
-      Axios.put('http://localhost:8080/drive/edit', { date: newdate, zipcode: zipcode }).then(
-        (response) => {
-          setdriveList(
-            driveList.map((val) => {
-              return val.zipcode == zipcode
-                ? {
-                  id: val.id,
-                  name: val.name,
-                  address: val.address,
-                  zipcode: val.zipcode,
-                  date: newdate,
-                }
-                : val;
-            })
-          );
-        }
-      );
+      setnewdate("")
+      Axios.put('http://localhost:8080/drive/edit', { date: newdate, zipcode: zipcode })
+        .then(
+          (response) => {
+            setdriveList(
+              driveList.map((val) => {
+                return val.zipcode == zipcode
+                  ? {
+                    id: val.id,
+                    name: val.name,
+                    address: val.address,
+                    zipcode: val.zipcode,
+                    date: newdate,
+                  }
+                  : val;
+              })
+            );
+          }
+
+        );
 
     };
 
@@ -315,10 +318,10 @@ function Adddrive() {
 
   const myStyle = {
     backgroundImage: "url('https://img.freepik.com/free-photo/close-up-students-standing-hands-making-fist-bump-gesture_1150-4512.jpg?w=1060&t=st=1670188203~exp=1670188803~hmac=1b0d618ac0c765bf66307a075ce44e6ee77e2bb04e4949937b5be6d13bcb313a')",
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
+    backgroundSize: '100%',
+    backgroundRepeat: 'repeat',
     width: '100%',
-    height: 'auto',
+    height: '100%',
     marginright: '50px'
   };
   return (
@@ -327,71 +330,71 @@ function Adddrive() {
       <Navbar id="navbar" bg="dark">
         <Container>
           <Navbar.Brand class="nav1">
-          <Link to='/' class="nav1">Hospital</Link> {"   "}
-            <Link to="/donor" class="nav1">Donor info</Link>{"   "}
-            <Link to="/drive" class="nav1">Drive info</Link>{"   "}
-            <Link to="/adddrive" class="nav1">Drive Admin</Link>{"   "}
-            <Link to="/bloodbank" class="nav1">Blood Bank</Link>{"   "}
+            <Link to='/' class="nav1">Hospital Inventory</Link> {"   "}
+            <Link to="/donor" class="nav1">Donor information</Link>{"   "}
+            <Link to="/drive" class="nav1">Drive information</Link>{"   "}
+            <Link to="/adddrive" class="nav1">Drive Inventory</Link>{"   "}
+            <Link to="/bloodbank" class="nav1">BloodBank Inventory</Link>{"   "}
             <Link to="/donorpage" class="nav1">Donor UI</Link>{"   "}
             <Link to="/viewappointment" class="nav1">View Appointments</Link>{"   "}
-            <Link to="/updateDonor" class="nav1">View Appointments</Link>{"   "}
+
           </Navbar.Brand>
         </Container>
       </Navbar>
 
       <div style={myStyle}>
-        <Card className="bg-warning text-black" id="adddrive">
+        <Card className="bg-danger" id="adddrive">
           <div className="App1">
             <div className="information1">
               <h1>Drive Inventory</h1>
               <br></br>
               <br></br>
-              <label> Name:</label>
+              <label id="label"> Name:</label>
               <input id="input"
                 type="text" value={name}
                 onChange={(event) => {
                   setname(event.target.value);
                 }}
               />
-              <div style={{ fontSize: 15, color: "red" }}>{nameError ? <p>{nameError}</p> : null}</div>
-              <label>Address:</label>
+              <div style={{ fontSize: 17, color: "white" }}>{nameError ? <p>{nameError}</p> : null}</div>
+              <label id="label">Address:</label>
               <input
                 type="text" id="input" value={address}
                 onChange={(event) => {
                   setaddress(event.target.value);
                 }}
               />
-              <div style={{ fontSize: 15, color: "red" }}>{addressError ? <p>{addressError}</p> : null}</div>
-              <label>zipcode:</label>
+              <div style={{ fontSize: 17, color: "white" }}>{addressError ? <p>{addressError}</p> : null}</div>
+              <label id="label">zipcode:</label>
               <input
                 type="text" id="input" value={zipcode}
                 onChange={(event) => {
                   setzipcode(event.target.value);
                 }}
               />
-              <div style={{ fontSize: 15, color: "red" }}>{zipcodeError ? <p>{zipcodeError}</p> : null}</div>
-              <label>Date:</label>
+              <div style={{ fontSize: 17, color: "white" }}>{zipcodeError ? <p>{zipcodeError}</p> : null}</div>
+              <label id="label">Date:</label>
               <input
                 type="date" id="input" value={date}
                 onChange={(event) => {
                   setdate(event.target.value);
                 }}
               />
-              <div style={{ fontSize: 15, color: "red" }}>{dateError ? <p>{dateError}</p> : null}</div>
+              <div style={{ fontSize: 17, color: "white" }}>{dateError ? <p>{dateError}</p> : null}</div>
               <br></br>
               <button id="button" onClick={Adding}>Add Drive</button>
             </div>
-            <div id="Messageerror" style={{ fontSize: 15, color: "red" }}>{MessageError ? <p>{MessageError}</p> : null}</div>
+            <div id="Messageerror" style={{ fontSize: 17, color: "white" }}>{MessageError ? <p>{MessageError}</p> : null}</div>
             <div className="drives">
               <button id="button" onClick={getDrives}>List of Drive Info</button>
 
               {driveList.map((val, key) => {
                 return (
                   <div className="drives">
-                    <div>
+                    <div id="label">
                       <h3>Name: {val.name}</h3>
                       <h3>Address: {val.address}</h3>
-                      <h3>zipcode: {val.zipcode}</h3>
+                      <h3>Zipcode: {val.zipcode}</h3>
                       <h3>Date: {val.date}</h3>
                     </div>
                     <div>
@@ -404,7 +407,7 @@ function Adddrive() {
                         }}
                       />
                       <br></br>
-                      <div style={{ fontSize: 15, color: "red" }}>{newdateError ? <p>{newdateError}</p> : null}</div>
+                      <div style={{ fontSize: 17, color: "white" }}>{newdateError ? <p>{newdateError}</p> : null}</div>
                       <button id="updatebutton"
                         onClick={() => {
                           updateDrive(val.zipcode);

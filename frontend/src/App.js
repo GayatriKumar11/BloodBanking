@@ -12,7 +12,7 @@ import Adddrive from './Drive/Adddrive';
 import Bloodbank from './BloodBank/Bloodbank';
 import Donorpage from './DonorPage/donorpage';
 import Appointment from './Appointment/Appointment'
-import Updatedonor from './Donor/Updatedonor';
+
 
 function App() {
   return (
@@ -26,7 +26,6 @@ function App() {
         <Route path="/bloodbank" element={<Bloodbank/>}></Route>
         <Route path="/donorpage" element={<Donorpage/>}></Route>
         <Route path="/viewappointment" element={<Appointment/>}></Route>
-        <Route path="/updateDonor" element={<Updatedonor/>}></Route>
       </Routes>
 
 
