@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Header from '../components/Header';
 import DonorImg from "../images/home-user.png";
 import HospitalAvatar from "../images/nurse.svg";
+import AdminAvatar from "../images/admin5.png"
 import {
     useLocation,
     useNavigate,
@@ -26,20 +28,19 @@ function withRouter(Component) {
 
 const Home = ({ history }) => (
     <div className="container">
-      <h1 className="text-center" style={{ color: "rgb(166, 72, 77)" }}>
-        Welcome to Blood Donation Finder
-      </h1>
-      <div className="row mt-5">
+      <Header />
+      <br></br><br></br>
         <div
-          className="container mt-5 col-md-4 bg-light"
+          className="container bg-light"
           style={{
             color: "gray",
             borderRadius: "25px",
-            height: "360px",
-            width: "300px",
+            height: "320px",
+            width: "4000px",
+            marginTop: "90px"
           }}
         >
-          <h2 className="p-2 text-center"> Are you a Donor?</h2>
+          <h2 className="p-2 text-center"> Please Signup and Login here</h2>
           <img
             src={DonorImg}
             className="rounded mx-auto d-block mt-4 "
@@ -63,14 +64,15 @@ const Home = ({ history }) => (
             </Link>
           </div>
         </div>
-  
+
+      <div className="row mt-5">
         <div
-          className="container mt-5 col-md-4 bg-light"
+          className="container col-md-4 bg-light"
           style={{
             color: "grey",
             borderRadius: "25px",
             height: "360px",
-            width: "300px",
+            width: "360px",
           }}
         >
           <h2 className="p-2 text-center">Are you a Hospital?</h2>
@@ -99,17 +101,17 @@ const Home = ({ history }) => (
         </div>
 
         <div
-          className="container mt-5 col-md-4 bg-light"
+          className="container col-md-4 bg-light"
           style={{
             color: "grey",
             borderRadius: "25px",
             height: "360px",
-            width: "300px",
+            width: "360px",
           }}
         >
           <h2 className="p-2 text-center">Are you a Admin?</h2>
           <img
-            src={HospitalAvatar}
+            src={AdminAvatar}
             className="rounded mx-auto d-block mt-4"
             alt="donor image"
             style={{ width: "150px" }}

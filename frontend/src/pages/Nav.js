@@ -1,7 +1,5 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import Logo from "../images/agua.png";
-import Menu from "../images/menu.png";
 
 export function withRouter(Children) {
   return (props) => {
@@ -40,30 +38,8 @@ export const isAuthenticated = () => {
 };
 
 const Nav = ({ history }) => (
-  <div className="mb-5">
-    <nav className="navbar navbar-expand-lg bg-danger">
-      <Link
-        className="navbar-brand mr-5"
-        to="/"
-        style={{ fontSize: "30px", color: "white" }}
-      >
-        <img src={Logo} style={{ width: "50px", marginRight: "10px" }} alt={"text"}/>
-        Blood Donation
-      </Link>
-
-      <button
-        className="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span className="navbar-toggler-icon">
-          <img src={Menu} style={{ width: "40px" }} alt={"text"} />
-        </span>
-      </button>
+  <div>
+    <nav>
 
       <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div className="navbar-nav ml-auto">

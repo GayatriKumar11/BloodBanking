@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { useParams } from "react-router-dom";
 import { resetPassword } from "../auth";
+import Header from "../components/Header";
 
 export function withRouter(Children) {
     return (props) => {
@@ -40,6 +41,8 @@ class ResetPassword extends Component {
     render() {
         return (
             <div className="container">
+                <br></br><br></br><br></br><br></br><br></br>
+                <Header />
                 <h2 className="mt-5 mb-5">Reset your Password</h2>
  
                 {this.state.message && (
@@ -51,6 +54,7 @@ class ResetPassword extends Component {
  
                 <form>
                     <div className="form-group mt-5">
+                        
                         <input
                             type="password"
                             className="form-control"
@@ -67,6 +71,7 @@ class ResetPassword extends Component {
                             autoFocus
                         />
                     </div>
+                    <br></br><br></br>
                     <button
                         onClick={this.resetPassword}
                         className="btn btn-raised btn-danger"

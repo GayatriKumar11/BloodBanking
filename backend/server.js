@@ -8,7 +8,9 @@ const expressValidator = require('express-validator');
 const formidable = require('formidable');
 const fs = require('fs')
 require('dotenv').config()
-
+var messageRoute = require('./Routes/message.routes');
+var pickupRoute = require('./Routes/pickup.routes');
+var bloodbankRoute = require('./Routes/bloodbank.routes');
 const app = express()
 
 //DB:
@@ -34,9 +36,15 @@ app.use(function (err, req, res, next) {
 
 //ROUTES
 const authRoutes = require('./Routes/authRoute.js')
+const userRoutes = require('./Routes/userRoute.js')
+
 
 //ROUTES MIDDLEWARE
 app.use('/api/auth', authRoutes);
+app.use('/api/user', userRoutes);
+app.use(pickupRoute);
+app.use(bloodbankRoute);
+app.use(messageRoute);
 
 //Routes Sumarizing:
 app.get('/api/', (req, res) => {

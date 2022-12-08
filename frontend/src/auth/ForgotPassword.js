@@ -25,6 +25,7 @@ class ForgotPassword extends Component {
     render() {
         return (
             <div className="container">
+                <br></br><br></br><br></br><br></br><br></br><br></br>
                 <h2 className="mt-5 mb-5">Ask for Password Reset</h2>
  
                 {this.state.message && (
@@ -52,6 +53,7 @@ class ForgotPassword extends Component {
                             autoFocus
                         />
                     </div>
+                    <br></br>
                     <button
                         onClick={this.forgotPassword}
                         className="btn btn-raised btn-danger"

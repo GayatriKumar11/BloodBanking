@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Header from "../components/Header";
 
 class SignupHospital extends Component {
   constructor() {
@@ -90,7 +91,8 @@ class SignupHospital extends Component {
     } = this.state;
     return (
       <div className="container">
-        <h1>SignUp Hospital</h1>
+        <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+        <h1>Sign Up</h1>
 
         {/* DISPLAY MESSAGE ERROR / SSUCCESS: **************************** */}
 
@@ -115,6 +117,7 @@ class SignupHospital extends Component {
 
         <form>
           <div className="form-group">
+            <Header />
             <label>Hospital Name</label>
             <input
               onChange={this.handleChange("hospitalName")}
@@ -173,7 +176,7 @@ class SignupHospital extends Component {
               className="form-control"
             />
           </div>
-
+          <br></br>
           <button
             onClick={this.clickSubmit}
             style={{ backgroundColor: "rgb(234, 181, 178)" }}

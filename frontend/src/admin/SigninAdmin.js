@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Navigate, Link } from "react-router-dom";
 import { isAuthenticated } from "../auth/adminAuth";
+import Header from "../components/Header";
 
 class SigninAdmin extends Component {
   constructor() {
@@ -79,7 +80,9 @@ class SigninAdmin extends Component {
 
     return (
       <div className="container">
-        <h1>SignIn admin</h1>
+        <br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+        <Header />
+        <h1>Sign In</h1>
 
         {/* DISPLAY MESSAGE ERROR / SSUCCESS: **************************** */}
 
@@ -120,7 +123,7 @@ class SigninAdmin extends Component {
               className="form-control"
             />
           </div>
-
+          <br></br>
           <button
             onClick={this.clickSubmit}
             className="btn btn-raised  btn-block"
@@ -129,6 +132,7 @@ class SigninAdmin extends Component {
             Login
           </button>
         </form>
+        <br></br>
         <p>
         <Link to="/forgot-password" className="text-danger">
             {" "}

@@ -4,6 +4,7 @@ import React, { Component } from "react";
 // import {signup} from "../auth/userAuth";
 // import SigninUser from '../user/SigninUser'
 import { Link } from "react-router-dom";
+import Header from "../components/Header";
 
 class SignupUser extends Component {
   constructor() {
@@ -77,6 +78,7 @@ class SignupUser extends Component {
   signupForm = (name, email, bloodType, lastTimeDonation, password) => (
     <form>
       <div>
+        <Header />
         <label>Name</label>
         <input
           onChange={this.handleChange("name")}
@@ -157,8 +159,10 @@ class SignupUser extends Component {
     } = this.state;
 
     return (
+      
       <div className="container">
-        <h1>SignUp User</h1>
+        <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+        <h1>Sign Up</h1>
 
         {/* DISPLAY MESSAGE ERROR / SSUCCESS: ********************************* */}
 

@@ -1,8 +1,7 @@
-/** @format */
-
 import React, { Component } from "react";
-import { Navigate, Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { isAuthenticated } from "../auth/userAuth";
+import Header from "../components/Header";
 
 class SignInUser extends Component {
   constructor() {
@@ -11,7 +10,7 @@ class SignInUser extends Component {
       email: "",
       password: "",
       error: "",
-      Navigate: false,
+      redirect: false,
       loading: false,
     };
   }
@@ -47,7 +46,7 @@ class SignInUser extends Component {
           this.setState({ error: data.error, loading: false });
         } else {
           this.authenticate(data, () => {
-            this.setState({ Navigate: true });
+            this.setState({ redirect: true });
           });
         }
       });
@@ -72,6 +71,7 @@ class SignInUser extends Component {
   signinForm = (email, password) => (
     <form>
       <div>
+        <Header />
         <label>Email</label>
         <input
           onChange={this.handleChange("email")}
@@ -102,15 +102,16 @@ class SignInUser extends Component {
   );
 
   render() {
-    const { email, password, error, Navigate, loading } = this.state;
+    const { email, password, error, redirect, loading } = this.state;
 
-    if (Navigate) {
+    if (redirect) {
       return <Navigate to={`/dashboard-user/${isAuthenticated().user._id}`} />;
     }
 
     return (
       <div className="container">
-        <h1>SignIn User</h1>
+        <br></br><br></br><br></br><br></br><br></br><br></br><br></br><br></br>
+        <h1>Sign in</h1>
 
         {/* DISPLAY MESSAGE ERROR / SSUCCESS: ***************************** */}
 
@@ -132,6 +133,7 @@ class SignInUser extends Component {
         )}
 
         {this.signinForm(email, password)}
+        <br></br>
         <p>
       <Link to="/forgot-password" className="text-danger">
           {" "}
