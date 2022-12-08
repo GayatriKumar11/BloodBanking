@@ -1,0 +1,48 @@
+h3,p{
+    color:black;
+    font:1.3rem;
+    font-family: 'Outfit';
+}
+
+.alertMessageBloodDrive {
+    display:block;
+
+    background-color:coral;
+    width:400px;
+    height:70px;
+    margin-bottom:20px;
+    margin-left:auto;
+    margin-right:auto;
+   
+    border-radius:1em;
+}
+
+
+.carousel-caption{
+    background-color: aliceblue;
+}
+
+.carousel .carousel-item {
+    height: 600px;
+  }
+  
+.item img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-height: 300px;
+  }
+
+.textAlert{
+    display:block;
+
+
+}
+.alert{
+    background-color: coral !important;
+}
+
+
+.back,.sponsor, .myForm{
+    background-color:rgb(255, 223, 223);
+}
