@@ -100,18 +100,18 @@ const Header = ({ history }) => {
                         {isAuthenticated().admin && (
                                     <>
 
-                                    <Link
+                                    {/* <Link
                                     className="nav-item nav-link m-2"
                                     to={`/dashboard-admin/${isAuthenticated().user._id}`}
                                     style={isActive(history, `/dashboard-user/${isAuthenticated().user._id}`)}
                                     >
                                     My Profile
-                                    </Link>
+                                    </Link> */}
                                     <Link
                                         to="/"
                                         onClick={() => signout(() => history.push("/"))}
                                         className="nav-item nav-link"
-                                        style={{ cursor: "pointer", color: "white" }}
+                                        style={{ cursor: "pointer", color: "black" }}
                                     >
                                         SignOut
                                     </Link>

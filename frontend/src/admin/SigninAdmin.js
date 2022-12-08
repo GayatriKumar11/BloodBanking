@@ -10,7 +10,7 @@ class SigninAdmin extends Component {
       adminEmail: "",
       password: "",
       error: "",
-      Navigate: false,
+      redirect: false,
       loading: false,
     };
   }
@@ -45,7 +45,7 @@ class SigninAdmin extends Component {
         //authenticate
         this.authenticate(data, () => {
           //Navigate
-          this.setState({ Navigate: true });
+          this.setState({ redirect: true });
         });
       }
     });
@@ -68,9 +68,9 @@ class SigninAdmin extends Component {
   };
 
   render() {
-    const { adminEmail, password, error, Navigate, loading } = this.state;
+    const { adminEmail, password, error, redirect, loading } = this.state;
 
-    if (Navigate) {
+    if (redirect) {
       return (
         <Navigate
           to={`/dashboard-admin/${isAuthenticated().admin._id}`}
