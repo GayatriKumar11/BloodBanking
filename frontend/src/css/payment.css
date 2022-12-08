@@ -1,0 +1,13 @@
+.app{
+    width:100vw;
+    height:100vw;
+    background-color:gray;
+    display:grid;
+    place-content:center;
+}
+
+.wrapper{
+    background-color:lightgrey;
+    padding:100px;
+    border-radius:10px;
+}

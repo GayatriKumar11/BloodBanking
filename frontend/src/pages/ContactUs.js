@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../components/Header';
 import Axios from 'axios';
-
+import Footer from "../components/Footer";
 
 const ContactUs = () => {
 
@@ -189,6 +189,7 @@ const ContactUs = () => {
 
                 </div>
             </section>
+            <Footer />
         </div>
     )
 }

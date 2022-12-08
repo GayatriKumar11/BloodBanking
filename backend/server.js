@@ -37,11 +37,12 @@ app.use(function (err, req, res, next) {
 //ROUTES
 const authRoutes = require('./Routes/authRoute.js')
 const userRoutes = require('./Routes/userRoute.js')
-
+const hospitalRoutes = require('./Routes/hospitalRoute.js')
 
 //ROUTES MIDDLEWARE
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/hospital', hospitalRoutes);
 app.use(pickupRoute);
 app.use(bloodbankRoute);
 app.use(messageRoute);

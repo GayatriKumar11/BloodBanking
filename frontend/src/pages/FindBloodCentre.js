@@ -40,6 +40,7 @@ const FindBloodCentre = () => {
             setbloodType("");
 
             console.log("Adding a new pickup");
+            $('.pickup-alert').css("display", "block");
             console.log("bloodCentreName" + bloodCentreName);
             addEvent();
         } catch (error) {

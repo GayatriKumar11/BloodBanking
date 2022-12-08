@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { forgotPassword } from "../auth";
+import Header from "../components/Header";
  
 class ForgotPassword extends Component {
     state = {
@@ -24,7 +25,9 @@ class ForgotPassword extends Component {
  
     render() {
         return (
+            
             <div className="container">
+                <Header />
                 <br></br><br></br><br></br><br></br><br></br><br></br>
                 <h2 className="mt-5 mb-5">Ask for Password Reset</h2>
  

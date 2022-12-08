@@ -8,7 +8,7 @@ import { MediumTile } from '../components/MediumTile';
 import { IconBox } from '../components/IconBox';
 import CountBox from '../components/CountBox';
 import { DonationTypeCard } from '../components/DonationTypeCard';
-
+import Footer from "../components/Footer";
 const Main = () => {
     return (
         <div>
@@ -221,7 +221,7 @@ const Main = () => {
 
 
             </div>
-
+        <Footer />
         </div>
     )
 }

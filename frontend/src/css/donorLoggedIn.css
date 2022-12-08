@@ -1,0 +1,144 @@
+.donorLoggedIn .form-group mt-3{
+    border: 2px solid black;
+}
+
+.php-email-form{
+    margin-left:auto;
+    margin-right:auto;
+
+    border-radius:10px;
+    width:90%;
+    height:80%;
+    background-color:transparent;
+
+}
+#errors{
+    font-size:17px;
+    margin-left:50px;
+}
+th,tr,th{
+    margin-left:auto;
+    margin-right:auto;
+
+}
+
+#errors{
+    font-size:17px;
+    margin-left:50px;
+}
+.DonorLoggedIn Table{
+    margin-left:auto !important;
+    margin-right:auto !important;
+    width:80% !important;
+    margin-bottom:100px;
+}
+#fullname,#email,#date{
+    margin-left:50px;
+    margin-top:20px;
+    width:80% !important;
+}
+#bloodbankname.form-control{
+    margin-left:50px;
+    margin-top:20px;
+    width:80% !important;
+    margin-right:50px;
+    
+}
+
+.donorLoggedIn .php-email-form input {
+    padding-bottom: 10px;
+}
+.donorLoggedIn.form-control, .donorLoggedIn.form-label{
+    margin-top:20%;
+    margin-left:20%;
+
+    width:60%;
+    margin-bottom:20px !important;
+}
+#mainDonorCard{
+    background-color:rgba(85, 4, 5, 0.766) !important;
+    margin-left:auto;
+    margin-right:auto;
+    width:80%;
+    
+}
+
+
+/* 
+.maincardfordonor {
+    width:90%;
+    height:80%;
+    background-color:rgba(255, 0, 0, 0.411);
+} */
+.display-4{
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:20px;
+    width:62%;
+    text-decoration:underline;
+    color:white;
+}
+.sent-message{
+    margin-left:auto;
+    margin-right:auto;
+    width:50%;
+
+}
+
+.pickup-alert{
+    display: none;
+}
+#imageBookAppointment{
+    margin-bottom:8%;
+    margin-left:230px;
+    margin-right:auto !important;
+    height:40%;
+    width:60%;
+}
+#dd{
+    border:5px solid darkred;
+    background-color:lightpink;
+
+
+
+}
+#bodydonor,#headerfordonor{
+    border:2px solid black;
+}
+.thead headerfordonor{
+    border:2px solid darkred;
+    
+
+}
+
+
+
+
+.form.php-email-form{
+    width:50%;
+    margin-left:auto;
+    margin-right:auto;
+}
+Table{
+    border:2px solid red;
+}
+
+.selectbloodb {
+    background-color: transparent;
+    border: 3px solid rgb(152, 0, 0);
+    border-radius: 50px;
+    -webkit-transition: all .15s ease-in-out;
+    transition: all .15s ease-in-out;
+    color: black;
+  }
+  .selectbloodb:hover {
+    box-shadow: 0 0 10px 0 rgb(152,0,0)inset, 0 0 20px 2px rgb(152,0,0);
+    border: 3px solid rgb(152,0,0);
+  }
+.selectbloodb{
+    margin-left:30px;
+padding-left:5%;
+padding-right:5%;
+border:1px solid darkred;
+border-radius:1px;
+}

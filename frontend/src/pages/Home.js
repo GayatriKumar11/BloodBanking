@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import Header from '../components/Header';
 import DonorImg from "../images/home-user.png";
 import HospitalAvatar from "../images/nurse.svg";
-import AdminAvatar from "../images/admin5.png"
+import AdminAvatar from "../images/admin5.png";
+import Footer from "../components/Footer";
 import {
     useLocation,
     useNavigate,
@@ -127,7 +128,7 @@ const Home = ({ history }) => (
           </div>
         </div>
       </div>
-
+      
     </div>
   );
   
