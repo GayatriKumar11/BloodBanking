@@ -1,0 +1,32 @@
+{
+    "/api/": "get Routes Resume in Json format",
+
+
+    "/api/auth/signup": "Create user",
+    "/api/auth/signin": "LOGIN user",
+    "/api/auth/hospital-signup": "Create hospital",
+    "/api/auth/hospital-signin": "LOGIN hospital",
+    "/api/auth/create": "Create admin",
+    "/api/auth/signout": "GET SIGNOUT hospital",
+
+
+    "/api/post/posts": "GET all posts",
+    "/api/posts/by/:hospitalId": "GET posts by Hospital",
+    "/api/post/new/:hospitalId" : "CREATE new post",
+    "/api/post/:postId" : "UPDATE post",
+    "/api/post/:postId" : "DELETE post",
+
+
+    "/api/user/users": "GET all users",
+    "/api/user/user/:userId": "GET single user",
+    "/api/user/user/:userId": "UPDATE single user",
+    "/api/user/user/:userId": "DELETE single user",
+
+
+    "/api/hospital/hospitals": "GET all hospitals",
+    "api/hospital/hospital/:hospitalId": "GET single hospital",
+    "api/hospital/hospital/:hospitalId": "UPDATRE single hospital",
+    "api/hospital/hospital/:hospitalId": "DELETE single hospital"
+
+
+}
